@@ -40,10 +40,26 @@
                   <tbody>
                     <?php
 
-
                     $no = 0;
+                    if(isset($_POST['filter_tgl'])){
+                      $mulai = $_POST['tgl_mulai'];
+                      $selesai = $_POST['tgl_selesai'];
+
+                      if($mulai!=null || $selesai!=null){
+                        $query = mysqli_query($koneksi, "SELECT * FROM tb_masuksarana BETWEEN 
+                        '$mulai' and DATE_ADD '$selesai' order by id_masuksarana DESC");
+
+                    } else {
+                        $query = mysqli_query($koneksi, "SELECT * FROM tb_masuksarana
+                        INNER JOIN tb_sarana ON tb_masuksarana.id_sarana = tb_sarana.id_sarana");
+                    }
+
+                    } else {
+                    
                     $query = mysqli_query($koneksi, "SELECT * FROM tb_masuksarana
                       INNER JOIN tb_sarana ON tb_masuksarana.id_sarana = tb_sarana.id_sarana");
+                    }
+
                     while ($msk = mysqli_fetch_array($query)) {
                       $no++
                     ?>

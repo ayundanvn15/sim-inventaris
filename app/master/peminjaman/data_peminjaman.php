@@ -32,7 +32,9 @@
                   <tbody>
                     <?php
                     $no = 0;
-                    $query = mysqli_query($koneksi, "SELECT * FROM tb_peminjaman INNER JOIN tb_sarana ON tb_peminjaman.id_sarana = tb_sarana.id_sarana");
+                    $query = mysqli_query($koneksi, "SELECT * FROM tb_peminjaman
+                    INNER JOIN tb_sarana ON tb_peminjaman.id_sarana = tb_sarana.id_sarana");
+                    
                     while ($pmnj = mysqli_fetch_array($query)) {
                       $no++
                     ?>

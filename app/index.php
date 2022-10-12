@@ -76,11 +76,14 @@ include('../header.php');?>
     else if($_GET['page']== 'data-pengguna'){
       include('master/pengguna/data_pengguna.php');
     }
+    else if($_GET['page']== 'edit-pengguna'){
+      include('master/pengguna/edit_pengguna.php');
+    }
     else if($_GET['page']== 'data-penggunaa'){
       include('master/pnggna/data_pengguna.php');
     }
-    else if($_GET['page']== 'edit-pengguna'){
-      include('master/pengguna/edit_pengguna.php');
+    else if($_GET['page']== 'data-penggunaa'){
+      include('master/pnggna/data_pengguna.php');
     }
     else if($_GET['page']== 'data-masuk-stok'){
       include('master/masuk_stok/data_masuk.php');

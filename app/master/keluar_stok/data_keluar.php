@@ -107,14 +107,6 @@
                 <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Tanggal Keluar" name="tgl_keluar" required>
               </div>
               <div class="form-group">
-                <label for="formGroupExempleInput4">Kategori</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="level">
-                  <option>--Pilih--</option>
-                  <option>Stok</option>
-                  <option>Sarana</option>
-                </select>
-              </div>
-              <div class="form-group">
                 <label for="formGroupExempleInput4">Keterangan</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Keterangan" name="keterangan" required>
               </div>
