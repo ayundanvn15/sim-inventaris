@@ -7,7 +7,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Keluar</h3>
+                <h3 class="card-title">Transaksi Keluar Stok</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -30,9 +30,9 @@
                   <thead>
                   <tr>
                     <th>No</th>
+                    <th>Tanggal Keluar</th>
                     <th>Nama</th>
                     <th>Jumlah</th>
-                    <th>Tanggal Keluar</th>
                     <th>Keterangan</th>
                     
                   </tr>
@@ -40,16 +40,35 @@
                   <tbody>
                     <?php
                     $no = 0;
-                    $query = mysqli_query($koneksi, "SELECT * FROM tb_keluarstok
+                    if(isset($_POST['filter_tgl'])){
+                      $mulai = $_POST['tgl_mulai'];
+                      $selesai = $_POST['tgl_selesai'];
+
+                    if($mulai!=null || $selesai!=null){
+                      $query = mysqli_query($koneksi, "SELECT * FROM tb_keluarstok
+                      INNER JOIN tb_stok ON tb_keluarstok.id_stok = tb_stok.id_stok WHERE tgl_keluar
+                      BETWEEN '$mulai' and '$selesai' order by id_keluarstok DESC;");
+
+                    } else {
+                        $query = mysqli_query($koneksi, "SELECT * FROM tb_keluarstok
+                        INNER JOIN tb_stok ON tb_keluarstok.id_stok = tb_stok.id_stok");
+                    }
+
+                    } else {
+                    
+                      $query = mysqli_query($koneksi, "SELECT * FROM tb_keluarstok
                       INNER JOIN tb_stok ON tb_keluarstok.id_stok = tb_stok.id_stok");
+                    }
+
                     while ($klr = mysqli_fetch_array($query)) {
                       $no++
+
                     ?>
                   <tr>
                     <td width="2%"><?php echo $no?></td>
+                    <td><?php echo $klr['tgl_keluar'];?></td>
                     <td><?php echo $klr['nama'];?></td>
                     <td><?php echo $klr['jumlah'];?></td>
-                    <td><?php echo $klr['tgl_keluar'];?></td>
                     <td><?php echo $klr['keterangan'];?></td>
                     
                   </tr>
@@ -81,6 +100,12 @@
           </div>
           <form method="get" action="master/keluar_stok/tambah_keluar.php">
             <div class="modal-body">
+
+            <div class="form-group">
+                <label for="formGroupExempleInput4">Tanggal Keluar</label>
+                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Tanggal Keluar" name="tgl_keluar" required>
+              </div>
+
               <div class="form-group">
                 <label for="formGroupExempleInput2">Nama Barang</label>
                 <select type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Barang" name="nama" required>>
@@ -98,18 +123,17 @@
                   
                 </select>
               </div>
+
               <div class="form-group">
                 <label for="formGroupExempleInput3">Jumlah</label>
                 <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Jumlah" name="jumlah" required>
               </div>
-              <div class="form-group">
-                <label for="formGroupExempleInput4">Tanggal Keluar</label>
-                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Tanggal Keluar" name="tgl_keluar" required>
-              </div>
+
               <div class="form-group">
                 <label for="formGroupExempleInput4">Keterangan</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Keterangan" name="keterangan" required>
               </div>
+              
               <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save</button>

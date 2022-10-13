@@ -67,7 +67,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-reply"></i>
               <p>
-                Transaksi keluar
+                Transaksi Keluar
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

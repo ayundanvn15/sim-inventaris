@@ -1,7 +1,7 @@
 <?php
+    $tglk = $_GET['tgl_keluar'];
     $nama_stok = $_GET['nama'];
     $jumlah = $_GET['jumlah'];
-    $tglk = $_GET['tgl_keluar'];
     $ket = $_GET['keterangan'];
 
     include ('../../../conn/config.php');    
@@ -21,7 +21,7 @@
     }
     //proses    
     else
-        $insert =mysqli_query($koneksi, "INSERT INTO tb_keluarstok (id_stok, jumlah, tgl_keluar, keterangan) VALUES ('$nama_stok', '$jumlah', '$tglk', '$ket')");
+        $insert =mysqli_query($koneksi, "INSERT INTO tb_keluarstok (tgl_keluar, id_stok, jumlah, keterangan) VALUES ('$tglk', '$nama_stok', '$jumlah', '$ket')");
             if($insert){
                 //update stok
                 $upstok= mysqli_query($koneksi, "UPDATE tb_stok SET jumlah_stok='$total' WHERE id_stok='$nama_stok'");

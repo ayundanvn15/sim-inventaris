@@ -22,7 +22,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="app/index2.html" class="h1"><b>Login</b>FORM</a>
+      <a href="app/index2.html" class="h1"><b>SIMI</b> ITC</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Login to start your session</p>
