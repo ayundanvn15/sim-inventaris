@@ -13,7 +13,7 @@
     //menghitung jumlah sarana
     $total    =$sarana+$jumlah;
     
-    if ($stok > $jumlah) {
+    if ($sarana > $jumlah) {
         ?>
         <script language="JavaScript">
             alert('Oops! theres a problem');

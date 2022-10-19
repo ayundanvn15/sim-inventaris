@@ -43,8 +43,8 @@
                     <td><?php echo $stok['jumlah_stok'];?></td>
                     <td><?php echo $stok['keterangan'];?></td>
                     <td>
-                      <a onclick="hapus_stok(<?php echo $stok['id_stok']?>)" class="btn btn-sm btn-danger">Delete</a> 
-                      <a href="index.php?page=edit-stok&& id_stok=<?php echo $stok['id_stok'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_stok(<?php echo $stok['id_stok']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a> 
+                      <a href="index.php?page=edit-stok&& id_stok=<?php echo $stok['id_stok'];?>" class="btn btn-sm btn-success"><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td>  
                   </tr>
                   <?php }?>

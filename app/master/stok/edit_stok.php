@@ -47,7 +47,7 @@ $view = mysqli_fetch_array($query);
                       <!-- text input -->
                       <div class="form-group">
                         <label>Jumlah</label>
-                        <input type="number" class="form-control" placeholder="Jumlah" name='jumlah' value="<?php echo $view['jumlah_stok'];?>">
+                        <input type="number" class="form-control" placeholder="Jumlah" name='jumlah_stok' value="<?php echo $view['jumlah_stok'];?>">
                       </div>
                     </div>
                    </div>

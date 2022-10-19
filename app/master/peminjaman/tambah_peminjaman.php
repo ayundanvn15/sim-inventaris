@@ -1,6 +1,6 @@
 <?php
-$nama 			= $_GET['nama'];
 $nama_sarana 	= $_GET['nama_sarana'];
+$nama 			= $_GET['nama'];
 $ktp 			= $_GET['no_ktp'];
 $jumlah 		= $_GET['jml_peminjaman'];
 $tglp 			= $_GET['tgl_pinjam'];
@@ -8,13 +8,13 @@ $tglk 			= $_GET['tgl_kembali'];
 $keperluan 		= $_GET['keperluan'];
 
     include ('../../../conn/config.php');    
-    $x =mysqli_query($koneksi, "SELECT * FROM tb_peminjaman WHERE id_sarana='$nama_sarana'");
-    $y   =mysqli_fetch_array($x);
-    $z   =$y['jumlah_sarana'];
+    $peminjaman =mysqli_query($koneksi, "SELECT * FROM tb_sarana WHERE id_sarana='$nama_sarana'");
+    $pmnj   =mysqli_fetch_array($peminjaman);
+    $pmj   =$pmnj['jumlah_sarana'];
     //menghitung jumlah sarana
-    $total    =$z-$jumlah;
+    $total    =$pmj-$jumlah;
     
-    if ($z < $jumlah) {
+    if ($pmj < $jumlah) {
         ?>
         <script language="JavaScript">
             alert('Oops! theres a problem');
@@ -24,7 +24,7 @@ $keperluan 		= $_GET['keperluan'];
     }
     //proses    
     else
-        $insert =mysqli_query($koneksi, "INSERT INTO tb_peminjaman (id_sarana, no_ktp, jml_peminjaman, tgl_pinjam, tgl_kembali, keperluan) VALUES ('$nama_sarana', '$ktp', '$jumlah', '$tglp', '$tglk', '$keperluan')");
+        $insert =mysqli_query($koneksi, "INSERT INTO tb_peminjaman (id_sarana, nama, no_ktp, jml_peminjaman, tgl_pinjam, tgl_kembali, keperluan) VALUES ('$nama_sarana', '$nama', '$ktp', '$jumlah', '$tglp', '$tglk', '$keperluan')");
         	if($insert){
                 //update sarana
                 $upstok= mysqli_query($koneksi, "UPDATE tb_sarana SET jumlah_sarana='$total' WHERE id_sarana='$nama_sarana'");

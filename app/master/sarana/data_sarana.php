@@ -42,8 +42,8 @@
                     <td><?php echo $srn['kondisi'];?></td>
                     <td><?php echo $srn['keterangan'];?></td>
                     <td>
-                      <a onclick="hapus_sarana(<?php echo $srn['id_sarana']?>)" class="btn btn-sm btn-danger">Delete</a>
-                      <a href="index.php?page=edit-sarana&& id_sarana=<?php echo $srn['id_sarana'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_sarana(<?php echo $srn['id_sarana']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a>
+                      <a href="index.php?page=edit-sarana&& id_sarana=<?php echo $srn['id_sarana'];?>" class="btn btn-sm btn-success"><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td>
                   </tr>
                   <?php }?>

@@ -124,11 +124,11 @@
               </div>
               <div class="form-group">
                 <label for="formGroupExempleInput3">Harga Satuan</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Harga Satuan" name="harga_satuan" >
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Harga Satuan" name="harga_satuan" >
               </div>
               <div class="form-group">
                 <label for="formGroupExempleInput3">Total</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Total" name="total" >
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Total" name="total" >
               </div>
               <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

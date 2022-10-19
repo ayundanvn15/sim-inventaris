@@ -3,6 +3,7 @@ $id = $_GET['id_peminjaman'];
 $query = mysqli_query($koneksi, "SELECT * FROM tb_peminjaman");
 $view = mysqli_fetch_array($query);
 
+
  ?>
  <section class="content">
     <div class="container-fluid">
@@ -15,9 +16,10 @@ $view = mysqli_fetch_array($query);
                 <form method="get" action="master/peminjaman/update_peminjaman.php">
                   <div class="row">
                     <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
-                        <label for="formGroupExempleInput2">Nama Barang</label>
-                        <select type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Barang" name="nama" required>>
+                        <label>Nama Barang</label>
+                        <select type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Barang" name="nama_sarana" required>>
                             <option value="">--Pilih--</option>
                             <?php
                             $query = mysqli_query($koneksi, "SELECT * FROM tb_sarana");
@@ -27,41 +29,66 @@ $view = mysqli_fetch_array($query);
                             <option value="<?php echo $pmnj['id_sarana']; ?>"><?php echo $pmnj['nama_sarana']; ?></option>
 
                             <?php }?>
-                  
                         </select>
-                      </div>  
+                      </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>Nama Peminjam</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Peminjam" name="nama" value="<?php echo $view['nama'];?>" required>
-                      </div>                 
-             
+                        <input type="text" class="form-control" placeholder="Nama Peminjam" name='nama' value="<?php echo $view['nama'];?>">
+                      </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>No KTP</label>
                         <input type="text" class="form-control" placeholder="No KTP" name='no_ktp' value="<?php echo $view['no_ktp'];?>">
                       </div>
-                   
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>Jumlah</label>
                         <input type="number" class="form-control" placeholder="Jumlah" name='jml_peminjaman' value="<?php echo $view['jml_peminjaman'];?>">
                       </div>
-                
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>Tanggal Pinjam</label>
                         <input type="date" class="form-control" placeholder="Tanggal Pinjam" name='tgl_pinjam' value="<?php echo $view['tgl_pinjam'];?>">
                       </div>
-                   
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>Tanggal Kembali</label>
                         <input type="date" class="form-control" placeholder="Tanggal Kembali" name='tgl_kembali' value="<?php echo $view['tgl_kembali'];?>">
                       </div>
-                   
+                    </div>
+                   </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
                       <div class="form-group">
                         <label>Keperluan</label>
                         <input type="text" class="form-control" placeholder="Keperluan" name='keperluan' value="<?php echo $view['keperluan'];?>">
                       </div>
                     </div>
-                  </div>
-                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                   </div>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                   <button type="submit" class="btn btn-sm btn-info">Save</button>
                 </form>
               </div>

@@ -48,8 +48,8 @@
                     <td><?php echo $pmnj['tgl_kembali'];?></td>
                     <td><?php echo $pmnj['keperluan'];?></td>
                     <td>
-                      <a onclick="hapus_peminjaman(<?php echo $pmnj['id_peminjaman']?>)" class="btn btn-sm btn-danger">Delete</a> 
-                      <a href="index.php?page=edit-peminjaman&& id=<?php echo $pmnj['id_peminjaman'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_peminjaman(<?php echo $pmnj['id_peminjaman']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a> 
+                      <a href="index.php?page=edit-peminjaman&& id_peminjaman=<?php echo $pmnj['id_peminjaman'];?>" class="btn btn-sm btn-success "><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td>
                   </tr>
                   <?php }?>

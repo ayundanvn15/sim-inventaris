@@ -40,8 +40,8 @@
                     <td><?php echo $prs['luas'];?></td>
                     <td><?php echo $prs['keterangan'];?></td>
                     <td>
-                      <a onclick="hapus_prasarana(<?php echo $prs['id_prasarana']?>)" class="btn btn-sm btn-danger">Delete</a>
-                      <a href="index.php?page=edit-prasarana&& id_prasarana=<?php echo $prs['id_prasarana'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_prasarana(<?php echo $prs['id_prasarana']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a>
+                      <a href="index.php?page=edit-prasarana&& id_prasarana=<?php echo $prs['id_prasarana'];?>" class="btn btn-sm btn-success"><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td>
                   </tr>
                   <?php }?>

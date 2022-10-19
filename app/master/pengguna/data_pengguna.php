@@ -53,8 +53,8 @@
                     <?php
                       if($_SESSION['level']== 'administrator') {?>
                     <td>
-                      <a onclick="hapus_pengguna(<?php echo $pgn['id_pengguna']?>)" class="btn btn-sm btn-danger">Delete</a>
-                      <a href="index.php?page=edit-pengguna&& id_pengguna=<?php echo $pgn['id_pengguna'];?>" class="btn btn-sm btn-success">Edit</a>
+                      <a onclick="hapus_pengguna(<?php echo $pgn['id_pengguna']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a>
+                      <a href="index.php?page=edit-pengguna&& id_pengguna=<?php echo $pgn['id_pengguna'];?>" class="btn btn-sm btn-success"><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td> <?php }?>
                   </tr>
                   <?php }?>
