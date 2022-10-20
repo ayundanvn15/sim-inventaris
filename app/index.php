@@ -46,6 +46,9 @@ include('../header.php');?>
     else if($_GET['page']== 'edit-stok'){
       include('master/stok/edit_stok.php');
     }
+    else if($_GET['page']== 'export-data'){
+      include('master/stok/export_stok.php');
+    }
     else if($_GET['page']== 'data-stokk'){
       include('master/stokk/data_stok.php');
     }
@@ -72,6 +75,12 @@ include('../header.php');?>
     }
     else if($_GET['page']== 'edit-peminjaman'){
       include('master/peminjaman/edit_peminjaman.php');
+    }
+    else if($_GET['page']== 'data-pengembalian'){
+      include('master/pengembalian/data_pengembalian.php');
+    }
+    else if($_GET['page']== 'edit-pengembalian'){
+      include('master/pengembalian/edit_pengembalian.php');
     }
     else if($_GET['page']== 'data-pengguna'){
       include('master/pengguna/data_pengguna.php');

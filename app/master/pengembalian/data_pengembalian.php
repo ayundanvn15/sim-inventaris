@@ -7,7 +7,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Peminjaman</h3>
+                <h3 class="card-title">Data Pengembalian</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -20,34 +20,32 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Barang</th>
-                    <th>Nama Peminjam</th>
+                    <th>Nama Pengembali</th>
                     <th>No KTP</th>
                     <th>Jumlah</th>
-                    <th>Tanggal Peminjaman</th>
-                    <th>Keperluan</th>
+                    <th>Tanggal Pengembalian</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php
                     $no = 0;
-                    $query = mysqli_query($koneksi, "SELECT * FROM tb_peminjaman
-                    INNER JOIN tb_sarana ON tb_peminjaman.id_sarana = tb_sarana.id_sarana");
+                    $query = mysqli_query($koneksi, "SELECT * FROM tb_pengembalian
+                    INNER JOIN tb_sarana ON tb_pengembalian.id_sarana = tb_sarana.id_sarana");
                     
-                    while ($pmnj = mysqli_fetch_array($query)) {
+                    while ($pmnb = mysqli_fetch_array($query)) {
                       $no++
                     ?>
                   <tr>
                     <td width="2%"><?php echo $no?></td>
-                    <td><?php echo $pmnj['nama_sarana'];?></td>
-                    <td><?php echo $pmnj['nama'];?></td>
-                    <td><?php echo $pmnj['no_ktp'];?></td>
-                    <td><?php echo $pmnj['jml_peminjaman'];?></td>
-                    <td><?php echo $pmnj['tgl_pinjam'];?></td>
-                    <td><?php echo $pmnj['keperluan'];?></td>
+                    <td><?php echo $pmnb['nama_sarana'];?></td>
+                    <td><?php echo $pmnb['nama'];?></td>
+                    <td><?php echo $pmnb['no_ktp'];?></td>
+                    <td><?php echo $pmnb['jml_pengembalian'];?></td>
+                    <td><?php echo $pmnb['tgl_kembali'];?></td>
                     <td>
-                      <a onclick="hapus_peminjaman(<?php echo $pmnj['id_peminjaman']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a> 
-                      <a href="index.php?page=edit-peminjaman&& id_peminjaman=<?php echo $pmnj['id_peminjaman'];?>" class="btn btn-sm btn-success "><i class="nav-icon fas fa-edit"></i>Edit</a>
+                      <a onclick="hapus_pengembalian(<?php echo $pmnb['id_pengembalian']?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i>Delete</a> 
+                      <a href="index.php?page=edit-pengembalian&& id_pengembalian=<?php echo $pmnb['id_pengembalian'];?>" class="btn btn-sm btn-success "><i class="nav-icon fas fa-edit"></i>Edit</a>
                     </td>
                   </tr>
                   <?php }?>
@@ -68,12 +66,12 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Data Peminjaman</h4>
+            <h4 class="modal-title">Data Pengembalian</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="get" action="master/peminjaman/tambah_peminjaman.php">
+          <form method="get" action="master/pengembalian/tambah_pengembalian.php">
             <div class="modal-body">
               <div class="form-group">
                 <label>Nama Barang</label>
@@ -91,8 +89,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>Nama Peminjam</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Peminjam" name="nama" required>
+                <label>Nama Pengembali</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Pengembali" name="nama" required>
               </div>
               <div class="form-group">
                 <label>No KTP</label>
@@ -100,15 +98,11 @@
               </div>
               <div class="form-group">
                 <label>Jumlah</label>
-                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Jumlah" name="jml_peminjaman" required>
+                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Jumlah" name="jml_pengembalian" required>
               </div>
               <div class="form-group">
-                <label>Tanggal Peminjaman</label>
-                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="yyy/dd/mm" name="tgl_pinjam">
-              </div>  
-              <div class="form-group">
-                <label>Keperluan</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Keperluan" name="keperluan" required>
+                <label>Tanggal Pengembali</label>
+                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="yyy/dd/mm" name="tgl_kembali">
               </div>
               <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -123,9 +117,9 @@
       </div>
 
 <script>
-  function hapus_peminjaman(data_id){
+  function hapus_pengembalian(data_id){
     //alert('ok');
-    //window.location=("master/peminjaman/hapus_peminjaman.php?id_peminjaman="+data_id);
+    //window.location=("master/pengembalian/hapus_pengembalian.php?id_pengembalian="+data_id);
     Swal.fire({
       title: 'Do you want to delete?',
       //showDenyButton: false,
@@ -136,7 +130,7 @@
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        window.location=("master/peminjaman/hapus_peminjaman.php?id_peminjaman="+data_id);
+        window.location=("master/pengembalian/hapus_pengembalian.php?id_pengembalian="+data_id);
       }
     })
   }

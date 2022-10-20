@@ -36,7 +36,7 @@
                     <th>Nama</th>
                     <th>Jumlah</th>
                     <th>Harga Satuan</th>
-                    <th>Total</th>
+                    <th>Total Harga</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -71,6 +71,8 @@
                     <td><?php echo $msk['tgl_masuk'];?></td>
                     <td><?php echo $msk['nama'];?></td>
                     <td><?php echo $msk['jumlah'];?></td>
+                    <td><?php echo $msk['harga_satuan'];?></td>
+                    <td><?php echo $msk['total'];?></td>
                   </tr>
                   <?php }?>
                   </tbody>
@@ -127,7 +129,7 @@
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Harga Satuan" name="harga_satuan" >
               </div>
               <div class="form-group">
-                <label for="formGroupExempleInput3">Total</label>
+                <label for="formGroupExempleInput3">Total Harga</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Total" name="total" >
               </div>
               <div class="modal-footer justify-content-between">

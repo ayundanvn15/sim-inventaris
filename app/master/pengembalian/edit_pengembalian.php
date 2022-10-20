@@ -1,6 +1,6 @@
 <?php
-$id = $_GET['id_peminjaman'];
-$query = mysqli_query($koneksi, "SELECT * FROM tb_peminjaman");
+$id = $_GET['id_pengembalian'];
+$query = mysqli_query($koneksi, "SELECT * FROM tb_pengembalian");
 $view = mysqli_fetch_array($query);
 
 
@@ -9,11 +9,11 @@ $view = mysqli_fetch_array($query);
     <div class="container-fluid">
       <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Edit Data Peminjaman</h3>
+                <h3 class="card-title">Edit Data Pengembalian</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form method="get" action="master/peminjaman/update_peminjaman.php">
+                <form method="get" action="master/pengembalian/update_pengembalian.php">
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
@@ -37,8 +37,8 @@ $view = mysqli_fetch_array($query);
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Nama Peminjam</label>
-                        <input type="text" class="form-control" placeholder="Nama Peminjam" name='nama' value="<?php echo $view['nama'];?>">
+                        <label>Nama Pengembali</label>
+                        <input type="text" class="form-control" placeholder="Nama Pengembali" name='nama' value="<?php echo $view['nama'];?>">
                       </div>
                     </div>
                    </div>
@@ -56,7 +56,7 @@ $view = mysqli_fetch_array($query);
                       <!-- text input -->
                       <div class="form-group">
                         <label>Jumlah</label>
-                        <input type="number" class="form-control" placeholder="Jumlah" name='jml_peminjaman' value="<?php echo $view['jml_peminjaman'];?>">
+                        <input type="number" class="form-control" placeholder="Jumlah" name='jml_pengembalian' value="<?php echo $view['jml_pengembalian'];?>">
                       </div>
                     </div>
                    </div>
@@ -64,17 +64,8 @@ $view = mysqli_fetch_array($query);
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Tanggal Peminjaman</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Pinjam" name='tgl_pinjam' value="<?php echo $view['tgl_pinjam'];?>">
-                      </div>
-                    </div>
-                   </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>Keperluan</label>
-                        <input type="text" class="form-control" placeholder="Keperluan" name='keperluan' value="<?php echo $view['keperluan'];?>">
+                        <label>Tanggal Pengembalian</label>
+                        <input type="date" class="form-control" placeholder="Tanggal Pengembalian" name='tgl_kembali' value="<?php echo $view['tgl_kembali'];?>">
                       </div>
                     </div>
                    </div>

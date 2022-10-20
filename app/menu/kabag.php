@@ -1,4 +1,4 @@
-<nav class="mt-2">
+<nav class="mt-2">                                                                                                                                                                                                                                                      <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
@@ -87,13 +87,27 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="index.php?page=data-peminjaman" class="nav-link">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-cube"></i>
               <p>
-                Peminjaman
-                <span class="right badge badge-danger"></span>
+                Transaksi Peminjaman
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.php?page=data-peminjaman" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Peminjaman</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=data-pengembalian" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengembalian</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="index.php?page=data-penggunaa" class="nav-link">

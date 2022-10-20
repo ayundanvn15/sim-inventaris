@@ -3,7 +3,7 @@
     $nama_sarana = $_GET['nama_sarana'];
     $jumlah = $_GET['jumlah'];
     $harga = $_GET['harga_satuan'];
-    $total = $_GET['total'];
+    $total_srn = $_GET['total'];
 
     
     include ('../../../conn/config.php');    
@@ -11,7 +11,7 @@
     $srn    =mysqli_fetch_array($selSar);
     $sarana    =$srn['jumlah_sarana'];
     //menghitung jumlah sarana
-    $total    =$sarana+$jumlah;
+    $total_srn    =$sarana+$jumlah;
     
     if ($sarana > $jumlah) {
         ?>
@@ -23,7 +23,7 @@
     }
     //proses    
     else{
-        $insert =mysqli_query($koneksi, "INSERT INTO tb_masuksarana (tgl_masuk, id_sarana, jumlah, harga_satuan, total) VALUES ('$tglm', '$nama_sarana', '$jumlah', '$harga', '$total')");
+        $insert =mysqli_query($koneksi, "INSERT INTO tb_masuksarana (tgl_masuk, id_sarana, jumlah, harga_satuan, total) VALUES ('$tglm', '$nama_sarana', '$jumlah', '$harga', '$total_srn')");
             if($insert){
                 //update sarana
                 $upstok= mysqli_query($koneksi, "UPDATE tb_sarana SET jumlah_sarana='$total' WHERE id_sarana='$nama_sarana'");

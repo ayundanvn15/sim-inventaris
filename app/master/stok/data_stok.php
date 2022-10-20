@@ -14,6 +14,7 @@
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg">
                   Add Data
                 </button>
+                <a href="export-stok" class="btn btn-info">Export Data</a>
                 <br></br>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
@@ -95,10 +96,6 @@
                 <label for="formGroupExempleInput">Keterangan</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Keterangan" name="keterangan" required>
               </div>
-              <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
             </div>
           </div> 
           </form>
